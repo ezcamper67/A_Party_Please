@@ -356,15 +356,19 @@ header .ext-header--dark {
 
 <!-- wp:group {"className":"apl-book-card","layout":{"type":"constrained"}} -->
 <div class="wp-block-group apl-book-card"><!-- wp:shortcode -->
-<form onsubmit="event.preventDefault();this.innerHTML='<p style=text-align:center;font-weight:700>Preview only — your WPForms form goes here.</p>'" style="display:grid;gap:14px">
-<label style="display:grid;gap:6px;font-weight:600">Your name<input required style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></label>
-<label style="display:grid;gap:6px;font-weight:600">Email<input type="email" required style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></label>
+<form id="book-form" action="https://api.web3forms.com/submit" method="POST" style="display:grid;gap:14px">
+<input type="hidden" name="access_key" value="38748c96-d784-4f23-82ee-15c66ca13c09">
+<input type="hidden" name="subject" value="New booking request from apartyplease.com">
+<input type="hidden" name="from_name" value="A Party Please website">
+<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+<label style="display:grid;gap:6px;font-weight:600">Your name<input name="name" autocomplete="name" required style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></label>
+<label style="display:grid;gap:6px;font-weight:600">Email<input type="email" name="email" autocomplete="email" required style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></label>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px">
-<label style="display:grid;gap:6px;font-weight:600">Party date<input type="date" style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></label>
-<label style="display:grid;gap:6px;font-weight:600">City<input style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></label></div>
-<label style="display:grid;gap:6px;font-weight:600">Character<select style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"><option>Ice Queen</option><option>Peachy Princess</option><option>Barbee</option><option>Mermaid</option><option>Dinosaur Wrangler</option><option>Sleeping Princess</option><option>Dark Fairy</option><option>Not sure yet</option></select></label>
-<label style="display:grid;gap:6px;font-weight:600">Anything else?<textarea rows="4" style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></textarea></label>
-<div class="wp-block-button apl-btn apl-btn--navy"><button class="wp-block-button__link" style="border:0;cursor:pointer;font:inherit;font-weight:600">Send booking request</button></div></form>
+<label style="display:grid;gap:6px;font-weight:600">Party date<input type="date" name="party_date" style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></label>
+<label style="display:grid;gap:6px;font-weight:600">City<input name="city" style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></label></div>
+<label style="display:grid;gap:6px;font-weight:600">Character<select name="character" style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"><option>Ice Queen</option><option>Peachy Princess</option><option>Barbee</option><option>Mermaid</option><option>Dinosaur Wrangler</option><option>Sleeping Princess</option><option>Dark Fairy</option><option>Not sure yet</option></select></label>
+<label style="display:grid;gap:6px;font-weight:600">Anything else?<textarea name="message" rows="4" style="padding:12px;border-radius:12px;border:1.5px solid #c9d2ec;font:inherit"></textarea></label>
+<div class="wp-block-button apl-btn apl-btn--navy"><button type="submit" class="wp-block-button__link" style="border:0;cursor:pointer;font:inherit;font-weight:600">Send booking request</button></div></form>
 <!-- /wp:shortcode --></div>
 <!-- /wp:group -->
 
@@ -376,4 +380,20 @@ header .ext-header--dark {
 </main>
 <footer class="pv-footer">A Party Please · Costumed character visits across the SF Bay Area · <a href="tel:+17073958395">707-395-8395</a></footer>
 <script>document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('is-menu-open')))</script>
+<script>
+document.getElementById('book-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var f=this,b=f.querySelector('button[type=submit]'),t=b.textContent;
+  b.disabled=true;b.textContent='Sending…';
+  try{
+    var r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    var d=await r.json();
+    if(!d.success)throw new Error(d.message);
+    f.innerHTML='<p style="text-align:center;font-weight:700">Thank you! Your booking request is on its way. We\u2019ll be in touch soon.</p>';
+  }catch(err){
+    b.disabled=false;b.textContent=t;
+    alert('Sorry, something went wrong. Please call us at (707) 395-8395 or email apartyplease@gmail.com.');
+  }
+});
+</script>
 </body></html>
