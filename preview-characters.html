@@ -1,0 +1,433 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Party Please — Characters (preview)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:#1f2440;background:#FDF0E8;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:700;letter-spacing:-.01em}
+img{max-width:100%;height:auto}
+a{color:inherit}
+.has-text-align-center{text-align:center}
+.alignwide{max-width:1200px;margin-left:auto;margin-right:auto}
+.apl-section>*:not(.alignwide),.apl-page-hero>*{max-width:1200px;margin-left:auto;margin-right:auto}
+.apl-section>.has-text-align-center{max-width:760px}
+.wp-block-cover{position:relative;display:flex;overflow:hidden}
+.wp-block-cover__image-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.wp-block-cover__background{position:absolute;inset:0;z-index:1}
+.wp-block-cover__inner-container{position:relative;z-index:2;width:100%}
+.wp-block-columns{display:flex;flex-wrap:nowrap;gap:2em}
+.wp-block-column{flex:1 1 0;min-width:0}
+@media(max-width:781px){.wp-block-columns{flex-wrap:wrap}.wp-block-column{flex-basis:100%}}
+.wp-block-buttons{display:flex;flex-wrap:wrap;gap:.6em}
+.wp-block-button__link{display:inline-block}
+figure{margin:0}
+/* preview-only header, mimics the site's floating Extendable header */
+.pv-header{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:min(1160px,calc(100% - 32px));z-index:50;display:flex;align-items:center;gap:16px;padding:12px 16px 12px 28px;border-radius:20px;background:rgba(18,42,107,.86);backdrop-filter:blur(10px);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.pv-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;text-decoration:none;margin-right:auto}
+.pv-phone{font-weight:600;text-decoration:none;font-size:.95rem}
+@media(max-width:560px){.pv-phone{display:none}}
+.wp-block-navigation__responsive-container-open{border:0;cursor:pointer;display:grid;place-items:center}
+.wp-block-navigation__responsive-container{display:none;position:fixed;inset:0;z-index:100;padding:32px}
+.wp-block-navigation__responsive-container.is-menu-open{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.wp-block-navigation-item__content{color:#fff;text-decoration:none}
+.pv-close{position:absolute;top:28px;right:28px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
+.pv-footer{background:#1B3A8C;color:#fff;padding:40px 24px;text-align:center;font-size:.95rem}
+.pv-footer a{color:#fff}
+
+/* =========================================================
+   A Party Please — custom styles
+   Paste into: Appearance → Editor → Styles (half-moon icon)
+   → ⋮ menu → Additional CSS. Replace anything already there.
+   ========================================================= */
+
+:root {
+  /* Six-color palette: navy + cream foundation, pink = party, gold = sparkle */
+  --apl-navy: #1B3A8C;        /* brand: headings, primary buttons, strip, menu */
+  --apl-navy-dark: #122A6B;   /* deep: header bar, footer, hero overlay */
+  --apl-cream: #FDF0E8;       /* base background */
+  --apl-blush: #FBD3E2;       /* soft: alternate sections, tags */
+  --apl-pink: #F28DB2;        /* accent: Book buttons, hero italic, hover */
+  --apl-gold: #FFC94D;        /* sparkle only: eyebrow, ✦ marks, focus ring */
+  /* Text */
+  --apl-ink: #1F2440;         /* dark text on pink buttons */
+  --apl-text: #3B4A7A;        /* all body text */
+  --apl-radius: 28px;
+}
+
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 120px; }   /* anchors land below the floating header */
+
+/* ---------- Header bar: deep navy instead of the theme's brown-black glass ---------- */
+header .ext-header-glass,
+header .ext-header--dark {
+  background-color: rgba(18, 42, 107, .86) !important;
+}
+
+/* ---------- Cake hamburger menu (simple white cake: 3 candles + 3 bars) ---------- */
+.wp-block-navigation__responsive-container-open {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='100 58 230 278' fill='%23fff'%3E%3Cpath d='M165.5 68C169.5 78 177.5 86 177.5 95A12 12 0 0 1 153.5 95C153.5 86 161.5 78 165.5 68Z'/%3E%3Cpath d='M215.5 68C219.5 78 227.5 86 227.5 95A12 12 0 0 1 203.5 95C203.5 86 211.5 78 215.5 68Z'/%3E%3Cpath d='M264.5 68C268.5 78 276.5 86 276.5 95A12 12 0 0 1 252.5 95C252.5 86 260.5 78 264.5 68Z'/%3E%3Crect x='152' y='112' width='27' height='50'/%3E%3Crect x='202' y='112' width='27' height='50'/%3E%3Crect x='251' y='112' width='27' height='50'/%3E%3Crect x='114' y='183' width='201' height='26'/%3E%3Crect x='114' y='241' width='201' height='26'/%3E%3Crect x='114' y='299' width='201' height='26'/%3E%3C/svg%3E") center / 34px 34px no-repeat;
+  transition: transform .2s ease;
+}
+.wp-block-navigation__responsive-container-open svg { opacity: 0; }
+.wp-block-navigation__responsive-container-open:hover,
+.wp-block-navigation__responsive-container-open:focus-visible { transform: rotate(-6deg) scale(1.08); }
+.wp-block-navigation__responsive-container-open:focus-visible { outline: 2px solid var(--apl-gold); outline-offset: 3px; }
+
+/* Full-screen menu once the cake is tapped */
+.wp-block-navigation__responsive-container.is-menu-open {
+  background: var(--apl-navy) !important;
+  color: #fff !important;
+}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-weight: 700;
+  padding: .3em 0;
+}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content:hover { color: var(--apl-gold); }
+
+/* ---------- Buttons ---------- */
+.apl-btn .wp-block-button__link,
+.apl-btn-ghost .wp-block-button__link {
+  border-radius: 999px;
+  padding: .9em 1.7em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.apl-btn .wp-block-button__link { background: var(--apl-pink); color: var(--apl-ink); }
+.apl-btn .wp-block-button__link:hover { background: #f7a8c4; transform: translateY(-2px); }
+.apl-btn-ghost .wp-block-button__link { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.85); }
+.apl-btn-ghost .wp-block-button__link:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
+.apl-btn--navy .wp-block-button__link { background: var(--apl-navy); color: #fff; }
+.apl-btn--navy .wp-block-button__link:hover { background: var(--apl-navy-dark); }
+.apl-btn--navy .wp-block-button__link:focus-visible,
+.apl-btn .wp-block-button__link:focus-visible { outline: 2px solid var(--apl-gold); outline-offset: 3px; }
+
+/* ---------- Hero: Ice Queen photo behind the landing text ---------- */
+.wp-block-cover.apl-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 150px clamp(20px, 6vw, 88px) 72px;
+  align-items: flex-end;
+}
+.wp-block-cover.apl-hero .wp-block-cover__image-background { object-position: 62% 22%; }
+.wp-block-cover.apl-hero .wp-block-cover__background {
+  opacity: 1 !important;
+  background: linear-gradient(100deg, rgba(18,42,107,.88) 0%, rgba(18,42,107,.62) 38%, rgba(18,42,107,.05) 72%),
+              linear-gradient(0deg, rgba(18,42,107,.55) 0%, rgba(18,42,107,0) 45%) !important;
+}
+.apl-hero .wp-block-cover__inner-container { max-width: 620px; margin: 0 !important; color: #fff; }
+.apl-hero .apl-eyebrow {
+  display: inline-block;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--apl-gold);
+  margin: 0 0 1rem;
+}
+.apl-hero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 6.4vw, 4.8rem);
+  line-height: 1.02;
+  margin: 0 0 1.2rem;
+  text-wrap: balance;
+}
+.apl-hero h1 em { font-style: italic; color: var(--apl-pink); }
+.apl-hero p.apl-lede { font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.55; color: rgba(255,255,255,.92); max-width: 34em; margin: 0 0 2rem; }
+.apl-hero .wp-block-buttons { gap: 12px; }
+
+@media (max-width: 700px) {
+  .wp-block-cover.apl-hero { padding-top: 120px; }
+  .wp-block-cover.apl-hero .wp-block-cover__image-background { object-position: 60% 15%; }
+  .wp-block-cover.apl-hero .wp-block-cover__background {
+    background: linear-gradient(0deg, rgba(18,42,107,.94) 0%, rgba(18,42,107,.7) 42%, rgba(18,42,107,.05) 75%) !important;
+  }
+}
+
+/* ---------- Trust strip ---------- */
+.apl-strip { background: var(--apl-navy); color: #fff; padding: 22px clamp(20px, 6vw, 88px) !important; margin-top: 0 !important; }
+.apl-strip .wp-block-columns { margin: 0; gap: 12px 32px; }
+.apl-strip p { margin: 0; font-weight: 600; font-size: .98rem; text-align: center; }
+.apl-strip p::before { content: "✦ "; color: var(--apl-gold); }
+
+/* ---------- Generic sections ---------- */
+.apl-section { padding: clamp(64px, 9vw, 120px) clamp(20px, 6vw, 88px) !important; margin-top: 0 !important; }
+.apl-section--cream { background: var(--apl-cream); }
+.apl-section--peach,
+.apl-section--blush { background: var(--apl-blush); }   /* --peach kept as an alias so existing pages still work */
+.apl-section h2 { color: var(--apl-navy); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0 0 .6rem; }
+.apl-section .apl-sub { color: var(--apl-text); font-size: 1.1rem; max-width: 40em; margin: 0 auto 2.6rem; }
+
+/* ---------- Featured characters (home) ---------- */
+.apl-featured.wp-block-columns { gap: 20px; }
+.apl-featured .wp-block-image { margin: 0; }
+.apl-featured .wp-block-image img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--apl-radius);
+  box-shadow: 0 12px 30px rgba(27,58,140,.14);
+  transition: transform .25s ease;
+}
+.apl-featured .wp-block-image a:hover img { transform: translateY(-6px) rotate(-1deg); }
+.apl-featured figcaption { text-align: center; font-weight: 700; color: var(--apl-navy); margin-top: .7rem; font-size: 1.05rem; }
+
+/* ---------- How it works ---------- */
+.apl-steps.wp-block-columns { gap: 20px; }
+.apl-step {
+  background: #fff;
+  border-top: 5px solid var(--apl-pink);
+  border-radius: var(--apl-radius);
+  padding: 32px 28px !important;
+  box-shadow: 0 12px 30px rgba(27,58,140,.08);
+}
+.apl-step .apl-num {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--apl-navy); color: #fff; font-weight: 700; font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+.apl-step h3 { color: var(--apl-navy); font-size: 1.35rem; margin: 0 0 .5rem; }
+.apl-step p { margin: 0; color: var(--apl-text); line-height: 1.55; }
+
+/* ---------- Booking section ---------- */
+.apl-book-card { background: #fff; border-radius: var(--apl-radius); padding: clamp(28px, 5vw, 56px) !important; max-width: 760px; margin-left: auto !important; margin-right: auto !important; box-shadow: 0 16px 40px rgba(27,58,140,.1); }
+.apl-book-card .wpforms-container { margin: 0; }
+.apl-contact-line { text-align: center; color: var(--apl-text); }
+.apl-contact-line a { color: var(--apl-navy); font-weight: 700; }
+
+/* ---------- Characters page ---------- */
+.apl-page-hero { background: var(--apl-navy); color: #fff; padding: 170px clamp(20px, 6vw, 88px) 72px !important; margin-top: 0 !important; }
+.apl-page-hero h1 { color: #fff; font-size: clamp(2.4rem, 6vw, 4.2rem); margin: 0 0 .8rem; }
+.apl-page-hero p { color: rgba(255,255,255,.9); font-size: 1.15rem; max-width: 36em; margin: 0; }
+
+.apl-chars.wp-block-group { display: grid !important; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; }
+.apl-chars > * { margin: 0 !important; }
+.apl-card { background: #fff; border-radius: var(--apl-radius); overflow: hidden; box-shadow: 0 12px 30px rgba(27,58,140,.1); display: flex; flex-direction: column; padding: 0 !important; }
+.apl-card .wp-block-image { margin: 0; }
+.apl-card .wp-block-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.apl-card-body { padding: 22px 24px 26px !important; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.apl-card-body > * { margin: 0 !important; }
+.apl-card h3 { color: var(--apl-navy); font-size: 1.45rem; }
+.apl-card p { color: var(--apl-text); line-height: 1.55; }
+.apl-card .wp-block-buttons { margin-top: auto !important; padding-top: 6px; }
+
+/* One tag style for every category; the word itself tells them apart */
+.apl-tag { display: inline-block; align-self: flex-start; font-size: .75rem !important; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; background: var(--apl-blush); color: var(--apl-navy); }
+
+.apl-more { background: var(--apl-navy); color: #fff; border-radius: var(--apl-radius); padding: clamp(28px, 5vw, 48px) !important; text-align: center; }
+.apl-more h2 { color: #fff; }
+.apl-more p { color: rgba(255,255,255,.9); }
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Small-screen tweaks ---------- */
+.apl-btns-center { justify-content: center; margin-top: 2.4rem; }
+@media (max-width: 781px) {
+  .apl-featured.wp-block-columns { flex-wrap: wrap !important; }
+  .apl-featured .wp-block-column { flex-basis: calc(50% - 10px) !important; flex-grow: 0; }
+  .apl-strip .wp-block-column { flex-basis: 100% !important; }
+}
+.apl-card .wp-block-button__link { white-space: nowrap; padding: .8em 1.3em; font-size: .95rem; }
+.apl-more { margin-top: 48px !important; }
+</style></head><body>
+<header class="pv-header"><a class="pv-logo" href="preview-home.html"><svg width="22" height="34" viewBox="0 0 22 34" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M11 12v20"/><path d="M11 2l1.6 3.4L16 7l-3.4 1.6L11 12 9.4 8.6 6 7l3.4-1.6z" fill="#fff" stroke-width="1"/></svg>A Party Please</a><a class="pv-phone" href="tel:+17073958395">707-395-8395</a>
+<button class="wp-block-navigation__responsive-container-open" aria-label="Open menu" onclick="document.getElementById('menu').classList.add('is-menu-open')"><svg width="24" height="24" viewBox="0 0 24 24"></svg></button></header>
+<div id="menu" class="wp-block-navigation__responsive-container" role="dialog" aria-label="Menu"><button class="pv-close" aria-label="Close menu" onclick="document.getElementById('menu').classList.remove('is-menu-open')">✕</button>
+<a class="wp-block-navigation-item__content" href="preview-home.html">Home</a><a class="wp-block-navigation-item__content" href="preview-characters.html">Characters</a><a class="wp-block-navigation-item__content" href="preview-home.html#how-it-works">How It Works</a><a class="wp-block-navigation-item__content" href="preview-home.html#book">Book Now</a></div>
+<main>
+<!-- wp:group {"align":"full","className":"apl-page-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull apl-page-hero"><!-- wp:heading {"level":1,"align":"wide"} -->
+<h1 class="wp-block-heading alignwide">Meet the characters</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"left"} -->
+<p class="has-text-align-left">Every character is played by a professional performer in full costume. Pick a favorite, then tell us about your party.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"apl-section apl-section--cream","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull apl-section apl-section--cream"><!-- wp:group {"align":"wide","className":"apl-chars"} -->
+<div class="wp-block-group alignwide apl-chars"><!-- wp:group {"className":"apl-card"} -->
+<div class="wp-block-group apl-card"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://apartyplease.com/wp-content/uploads/2026/09/0851F627-E769-412A-8A32-ADDC3B7867D4-731x1024.jpg" alt="Ice Queen performer in a sparkling blue gown"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:group {"className":"apl-card-body"} -->
+<div class="wp-block-group apl-card-body"><!-- wp:paragraph {"className":"apl-tag apl-tag--princess"} -->
+<p class="apl-tag apl-tag--princess">Princess</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Ice Queen</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A shimmering winter queen who leads sing-alongs, snowy games and a royal photo moment with the birthday child.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"apl-btn apl-btn--navy"} -->
+<div class="wp-block-button apl-btn apl-btn--navy"><a class="wp-block-button__link wp-element-button" href="preview-home.html#book">Book Ice Queen</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"apl-card"} -->
+<div class="wp-block-group apl-card"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://apartyplease.com/wp-content/uploads/2026/09/Princess-Peach-parade-IMG_6211-1024x941.jpg" alt="Peachy Princess performer in a pink gown at a parade"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:group {"className":"apl-card-body"} -->
+<div class="wp-block-group apl-card-body"><!-- wp:paragraph {"className":"apl-tag apl-tag--princess"} -->
+<p class="apl-tag apl-tag--princess">Princess</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Peachy Princess</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A sunny, pink-gowned princess with a big smile. Perfect for garden parties and a parade of little royals.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"apl-btn apl-btn--navy"} -->
+<div class="wp-block-button apl-btn apl-btn--navy"><a class="wp-block-button__link wp-element-button" href="preview-home.html#book">Book Peachy Princess</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"apl-card"} -->
+<div class="wp-block-group apl-card"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://apartyplease.com/wp-content/uploads/2026/09/img_20260920_0843482-edited-1024x1024.jpeg" alt="Barbee performer in a pink gingham dress"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:group {"className":"apl-card-body"} -->
+<div class="wp-block-group apl-card-body"><!-- wp:paragraph {"className":"apl-tag apl-tag--princess"} -->
+<p class="apl-tag apl-tag--princess">Fan favorite</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Barbee</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Pretty in pink and ready for a dance party, a fashion show on the lawn or a very glamorous group photo.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"apl-btn apl-btn--navy"} -->
+<div class="wp-block-button apl-btn apl-btn--navy"><a class="wp-block-button__link wp-element-button" href="preview-home.html#book">Book Barbee</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"apl-card"} -->
+<div class="wp-block-group apl-card"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://apartyplease.com/wp-content/uploads/2026/09/Mermaid-IMG_1716.jpg" alt="Mermaid performer with red hair and a sequined tail beside a pool"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:group {"className":"apl-card-body"} -->
+<div class="wp-block-group apl-card-body"><!-- wp:paragraph {"className":"apl-tag apl-tag--princess"} -->
+<p class="apl-tag apl-tag--princess">Princess</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Mermaid</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Straight from under the sea for pool parties and beach birthdays, with stories, songs and splashy games.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"apl-btn apl-btn--navy"} -->
+<div class="wp-block-button apl-btn apl-btn--navy"><a class="wp-block-button__link wp-element-button" href="preview-home.html#book">Book Mermaid</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"apl-card"} -->
+<div class="wp-block-group apl-card"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://apartyplease.com/wp-content/uploads/2026/09/Dinosaur-and-archeologist-C1D22B0B-053D-4C6A-A054-ECB842B725B3-edited-979x1024.jpeg" alt="Dinosaur Wrangler performer in explorer gear holding a baby dinosaur"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:group {"className":"apl-card-body"} -->
+<div class="wp-block-group apl-card-body"><!-- wp:paragraph {"className":"apl-tag apl-tag--adventure"} -->
+<p class="apl-tag apl-tag--adventure">Adventure</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Dinosaur Wrangler</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>An intrepid explorer with a very friendly baby dinosaur in tow. A hit with dino fans and backyard adventurers.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"apl-btn apl-btn--navy"} -->
+<div class="wp-block-button apl-btn apl-btn--navy"><a class="wp-block-button__link wp-element-button" href="preview-home.html#book">Book Dinosaur Wrangler</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"apl-card"} -->
+<div class="wp-block-group apl-card"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://apartyplease.com/wp-content/uploads/2026/09/aurora-and-maleficent-edited-1024x922.png" alt="Sleeping Princess and Dark Fairy performers posing together in front of a house"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:group {"className":"apl-card-body"} -->
+<div class="wp-block-group apl-card-body"><!-- wp:paragraph {"className":"apl-tag apl-tag--villain"} -->
+<p class="apl-tag apl-tag--villain">Duo</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Sleeping Princess &amp; Dark Fairy</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Book the dreamy princess, the dramatic dark fairy, or both together for a storybook showdown the kids won't forget.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"apl-btn apl-btn--navy"} -->
+<div class="wp-block-button apl-btn apl-btn--navy"><a class="wp-block-button__link wp-element-button" href="preview-home.html#book">Book this duo</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"wide","className":"apl-more","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide apl-more"><!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">More characters available</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center">Spider Hero · Fairy Mary Mae · Witch · Santa &amp; Mrs. Claus (seasonal)<br>Don't see your child's favorite? Just ask.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"className":"apl-btns-center","layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons apl-btns-center"><!-- wp:button {"className":"apl-btn"} -->
+<div class="wp-block-button apl-btn"><a class="wp-block-button__link wp-element-button" href="preview-home.html#book">Ask about a character</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+</main>
+<footer class="pv-footer">A Party Please · Costumed character visits across the SF Bay Area · <a href="tel:+17073958395">707-395-8395</a></footer>
+<script>document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('is-menu-open')))</script>
+</body></html>
